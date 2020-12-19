@@ -154,7 +154,7 @@ class MyWindow(QWidget):
             self.l.move(754 // 2 - 69, 554 // 3)
             self.l.setText("Converted to")
             self.label.move(754 // 2 - 173, 554 // 3 + 554 // 3)
-            self.label.setText("File path: ConverterApp\media")
+            self.label.setText("File path: ConverterApp/media")
         except IOError:
             self.label.move(754 // 2 - 207, 554 // 3 + 554 // 3)
             self.label.setFont(QFont("Bahnschrift", 17))
@@ -172,7 +172,7 @@ class MyWindow(QWidget):
             self.l.move(754 // 2 - 69, 554 // 3)
             self.l.setText("Converted to")
             self.label.move(754 // 2 - 173, 554 // 3 + 554 // 3)
-            self.label.setText("File path: Converter/media/")
+            self.label.setText("File path: Converter/media")
         except IOError:
             self.label.move(754 // 2 - 207, 554 // 3 + 554 // 3)
             self.label.setFont(QFont("Bahnschrift", 17))
