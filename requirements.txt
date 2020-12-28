@@ -2,3 +2,11 @@ pip install pyqt5
 pip install pyqt5-tools
 pip instal pafy
 pip install moviepy
+
+# for Linux systems #
+You should have python3.6 and pip3.6 installed
+then:
+  sudo pip3.6 install pyqt5
+  sudo pip3.6 install pyqt5-tools
+  sudo pip3.6 install pafy
+  sudo pip3.6 install moviepy
