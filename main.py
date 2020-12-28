@@ -4,10 +4,14 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import os
+import pwd
 import ntpath
 from moviepy.editor import *
 import pafy
 import shutil
+
+os.getlogin = lambda: pwd.getpwuid(os.getuid())[0]
+user = os.getlogin()
 
 class MyWindow(QWidget):
     def __init__(self):
@@ -18,7 +22,10 @@ class MyWindow(QWidget):
         self.setMinimumWidth(754)
         self.setMinimumHeight(554)
         self.setWindowTitle("ConDo")
-        self.setWindowIcon(QtGui.QIcon('music.png'))
+        try:
+            self.setWindowIcon(QtGui.QIcon('music.png'))
+        except:
+            self.setWindowIcon(QtQui.QIcon(f'/home/{user}/Downloads/File_Converter_and_YT_Video_Downloader/music.png'))
         self.initUI()
         self.setStyleSheet("""
                             QPushButton {
