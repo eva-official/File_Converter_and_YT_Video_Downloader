@@ -151,6 +151,7 @@ class MyWindow(QWidget):
 
     def convertmp3(self):
         try:
+            self.btn3.clicked.disconnect(self.convertmp3)
             self.btnB.setGeometry(754 - 97, 554 - 47, 97, 47)
             fname = QFileDialog.getOpenFileName(self, 'Open file', 'C:/', "Video files (*.mp4 *.webm)")
             videoPath = fname[0]
@@ -169,6 +170,7 @@ class MyWindow(QWidget):
 
     def convertwav(self):
         try:
+            self.btn4.clicked.disconnect(self.convertwav)
             self.btnB.setGeometry(754 - 97, 554 - 47, 97, 47)
             fname = QFileDialog.getOpenFileName(self, 'Open file', 'C:/', "Video files (*.mp4 *.webm)")
             videoPath = fname[0]
