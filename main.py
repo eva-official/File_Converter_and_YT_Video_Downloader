@@ -4,16 +4,20 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 import os
-import pwd
 import ntpath
 from moviepy.editor import *
 import pafy
 import shutil
+try:
+    import pwd
 
-os.getlogin = lambda: pwd.getpwuid(os.getuid())[0]
-user = os.getlogin()
+    os.getlogin = lambda: pwd.getpwuid(os.getuid())[0]
+    user = os.getlogin()
 
-class MyWindow(QWidget):
+except:
+    user = os.getlogin()
+
+    class MyWindow(QWidget):
     def __init__(self):
         super(MyWindow, self).__init__()
         self.setGeometry(158, 158, 754, 554)
